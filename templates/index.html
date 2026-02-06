@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f8f8f8; }
+        h1 { color: #333; }
+        form { background: #fff; padding: 20px; border-radius: 10px; width: 400px; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input { width: 100%; padding: 6px; margin-top: 4px; }
+        button { margin-top: 15px; padding: 10px; background: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { margin-top: 20px; font-size: 18px; color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Model Prediction</h1>
+    <form method="post">
+        <label>Long hair</label>
+        <input type="number" step="any" name="Long hair" required>
+
+        <label>forehead_width_cm</label>
+        <input type="number" step="any" name="forehead_width_cm" required>
+
+        <label>forehead_height_cm</label>
+        <input type="number" step="any" name="forehead_height_cm" required>
+
+        <label>nose_wide</label>
+        <input type="number" step="any" name="nose_wide" required>
+
+        <label>nose_long</label>
+        <input type="number" name="nose_long" required>
+
+        <label>lips_thin</label>
+        <input type="number" name="lips_thin" required>
+
+        <label>distance_nose_to_lip_long</label>
+        <input type="number" name="distance_nose_to_lip_long" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is not none %}
+        <div class="result">Prediction: {{ prediction }}</div>
+    {% endif %}
+
+
+<div class="footer">
+        Created by <strong>Sohail</strong> | Data Analyst & Machine Learning
+    </div>
+
+</body>
+</html>
